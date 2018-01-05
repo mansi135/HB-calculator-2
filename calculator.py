@@ -27,30 +27,37 @@ while True:
     #change the string to a list
     user_input = user_input.strip().split(" ")
     operator = user_input[0]
-    operand1 = float(user_input[1])
-    #check the len of list
-    if len(user_input) >= 3:
-        operand2 = float(user_input[2])
-        if len(user_input) == 4:
-            operand3 = float(user_input[3])
+    # operand1 = float(user_input[1])
+    # #check the len of list
+    # if len(user_input) >= 3:
+    #     operand2 = float(user_input[2])
+    #     if len(user_input) == 4:
+    #         operand3 = float(user_input[3])
+    operands = user_input[1:]
+    float_operands = []
+    #change all integer to float
+    for operand in operands:
+        operand = float(operand)
+        float_operands.append(operand)
+
 
     if operator == "+":
-        print add(operand1, operand2)
+        print add(float_operands)
     elif operator == "-":
-        print subtract(operand1, operand2)
+        print subtract(operands)
     elif operator == "*":
-        print multiply(operand1, operand2)
+        print multiply(operands)
     elif operator == "/":
-        print divide(operand1, operand2)
+        print divide(operands)
     elif operator == "square":
-        print square(operand1)
+        print square(operands)
     elif operator == "cube":
-        print cube(operand1)
+        print cube(operands)
     elif operator == "pow":
-        print power(operand1, operand2)
+        print power(operands)
     elif operator == "mod":
-        print mod(operand1, operand2)
+        print mod(operands)
     elif operator == "cubes+":
-        print add_cubes(operand1, operand2)
+        print add_cubes(operands)
     elif operator == "x+":
-        print add_mult(operand1, operand2, operand3)
+        print add_mult(operands)
